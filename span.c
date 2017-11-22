@@ -90,7 +90,7 @@ static int __span_check( void )
   pr_debug("[SPAN] --> got %d arguments for srcs.\n", srcs_argc);
 #endif
 
-  if ( (_span_data.dev = __dev_get_by_name( &init_net, _span_data.dst.name )) == NULL )  {
+  if ( (_span_data.dev = dev_get_by_name( &init_net, _span_data.dst.name )) == NULL )  {
     pr_err("[SPAN] --> __span_hook: Cannot fetch dev:%s",_span_data.dst.name);
     return -1;
   }
